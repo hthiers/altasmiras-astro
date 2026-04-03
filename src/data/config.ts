@@ -1,6 +1,6 @@
 export const siteConfig = {
-  companyName: 'Titan Core',
-  siteUrl: 'https://titan-core.com',
+  companyName: 'Altasmiras',
+  siteUrl: 'https://altasmiras.cl',
   Socials: {
       xSocial: 'https://x.com/astrodotbuild',
       Github: 'https://github.com/withastro',
@@ -14,8 +14,8 @@ export const siteConfig = {
 
 export const SEO = {
   Separator: '|',
-  SiteName: 'Titan Core',
-  defaultDescription: 'A modern, high-performance Astro JS theme',
+  SiteName: 'Altasmiras',
+  defaultDescription: 'Acerca de...',
 };
   
 export const blogSetting = {
