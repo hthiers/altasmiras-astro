@@ -14,7 +14,7 @@ export const siteConfig = {
 
 export const SEO = {
   Separator: '|',
-  SiteName: 'Altasmiras',
+  SiteName: 'Altasmiras Capacitación',
   defaultDescription: 'Acerca de...',
 };
   
