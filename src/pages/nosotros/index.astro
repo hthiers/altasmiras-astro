@@ -1,0 +1,82 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+import SplitPanel from '@components/sections/SplitPanel.astro';
+import TeamGrid from '@components/sections/TeamGrid.astro';
+import aboutImage from '../../assets/images/home/about.jpg';
+
+const seoTitle = 'Quiénes Somos | Fundación Altasmiras';
+const seoDescription =
+    'Conoce la historia y el equipo detrás de Fundación Altasmiras, institución sin fines de lucro creada en 2017 por la Diócesis de Villarrica.';
+
+const innerHeroContent = {
+    title: 'Nuestra Historia',
+    description:
+        'Desde 2017 trabajamos para generar oportunidades de capacitación y desarrollo en las comunidades rurales y vulnerables de La Araucanía y Los Ríos.',
+};
+
+const misionSection = {
+    eyebrow: 'NUESTRA MISIÓN',
+    headline: 'Capacitación con enfoque humano',
+    description:
+        'Fundación Altasmiras es una institución sin fines de lucro que promueve la capacitación y el desarrollo de personas, especialmente en sectores rurales y vulnerables, con un enfoque técnico, social y humano, basado en valores de respeto, dignidad y compromiso con las personas.',
+    image: { src: aboutImage, alt: 'Fundación Altasmiras' },
+    buttons: [{ text: 'Ver Cursos 2025', link: '/cursos', variant: 'primary' as const }],
+};
+
+const footerCta = {
+    eyebrow: 'ÚNETE',
+    title: '¿Quieres saber más?',
+    description: 'Contáctanos para conocer más sobre nuestros programas de capacitación.',
+    hideCta: false,
+    button: { text: 'Contáctanos', link: '/contact' },
+};
+---
+
+<Layout title={seoTitle} description={seoDescription} footerCta={footerCta}>
+    <InnerHero content={innerHeroContent} />
+    <SplitPanel content={misionSection} imagePosition="left" background="base" padding="base" />
+
+    <section class="bg-[var(--color-base-bg)] py-16 md:py-24">
+        <div class="site-container px-4">
+            <div class="text-center mb-16">
+                <p class="eyebrow">NUESTRA HISTORIA</p>
+                <h2>Hitos que nos definen</h2>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="relative border-l-2 border-[var(--color-primary)] pl-8 space-y-12">
+                    <div class="relative" data-aos="fade-up">
+                        <span class="absolute -left-11 w-6 h-6 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white text-xs font-bold">1</span>
+                        <p class="text-sm font-bold text-[var(--color-primary)] uppercase tracking-wider mb-1">2017</p>
+                        <p class="text-base">Creación de la Fundación por la Diócesis de Villarrica.</p>
+                    </div>
+                    <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                        <span class="absolute -left-11 w-6 h-6 rounded-full bg-[var(--color-primary)]"></span>
+                        <p class="text-sm font-bold text-[var(--color-primary)] uppercase tracking-wider mb-1">2022</p>
+                        <p class="text-base">Ejecución de cursos en La Araucanía y Los Ríos, beneficiando a 175 personas.</p>
+                    </div>
+                    <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                        <span class="absolute -left-11 w-6 h-6 rounded-full bg-[var(--color-primary)]"></span>
+                        <p class="text-sm font-bold text-[var(--color-primary)] uppercase tracking-wider mb-1">2024</p>
+                        <p class="text-base">Adjudicación de cursos de cosmetología, masajes y cocina.</p>
+                    </div>
+                    <div class="relative" data-aos="fade-up" data-aos-delay="300">
+                        <span class="absolute -left-11 w-6 h-6 rounded-full bg-[var(--color-primary)]"></span>
+                        <p class="text-sm font-bold text-[var(--color-primary)] uppercase tracking-wider mb-1">2025</p>
+                        <p class="text-base">Expansión con nuevos cursos de oficio en Los Ríos y La Araucanía: cosmetología básica, árbitro de fútbol, cuidados primarios de personas, diseño y confección de prendas de vestir, redes sanitarias, instalaciones eléctricas tipo F y G, y orfebrería.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[var(--color-base-bg)] pb-16 md:pb-24">
+        <div class="site-container px-4">
+            <div class="text-center mb-16">
+                <p class="eyebrow">NUESTRO EQUIPO</p>
+                <h2>Quiénes nos conducen</h2>
+            </div>
+        </div>
+        <TeamGrid />
+    </section>
+</Layout>

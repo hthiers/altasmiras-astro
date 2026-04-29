@@ -1,0 +1,84 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+import Stats from '@components/sections/Stats.astro';
+import { statsLists } from '@data/stats';
+import { Image } from 'astro:assets';
+import orfebreria from '../../assets/images/courses/orfebreria.png';
+import arbitro from '../../assets/images/courses/arbitro.png';
+import cuidados from '../../assets/images/courses/cuidados.png';
+import redesSanitarias from '../../assets/images/courses/redes-sanitarias.png';
+import placeholder from '../../assets/images/home/default-hero.jpg';
+
+const seoTitle = 'Cursos 2025 | Fundación Altasmiras';
+const seoDescription =
+    'Conoce los cursos de oficio ejecutados en 2025 en las regiones de Los Ríos y La Araucanía.';
+
+const innerHeroContent = {
+    title: 'Cursos Ejecutados 2025',
+    description:
+        'Durante 2025 ejecutamos diversos cursos de oficio en las regiones de Los Ríos y La Araucanía, fortaleciendo habilidades prácticas y promoviendo el desarrollo laboral y el emprendimiento.',
+};
+
+const courses = [
+    { title: 'Cosmetología básica', location: 'Villarrica', participants: 18, unit: 'alumnas', image: placeholder },
+    { title: 'Orfebrería (cobre y plata)', location: 'Lanco', participants: 20, unit: 'participantes', image: orfebreria },
+    { title: 'Árbitro de fútbol', location: 'Panguipulli', participants: 14, unit: 'participantes', image: arbitro },
+    { title: 'Cuidados primarios de personas', location: 'Mariquina', participants: 18, unit: 'alumnas', image: cuidados },
+    { title: 'Diseño de prendas de vestir', location: 'Lanco', participants: 20, unit: 'alumnas', image: cuidados },
+    { title: 'Redes sanitarias y gas', location: 'Mariquina', participants: 18, unit: 'alumnos', image: redesSanitarias },
+    { title: 'Instalaciones eléctricas', location: 'Valdivia', participants: 17, unit: 'alumnas', image: placeholder },
+];
+
+const impacto2025 = {
+    eyebrow: 'IMPACTO 2025',
+    title: 'Resultados del año',
+    variant: 'default' as const,
+    stats: statsLists.impacto2025.stats,
+};
+
+const footerCta = {
+    eyebrow: 'ÚNETE',
+    title: '¿Te interesa uno de nuestros cursos?',
+    description: 'Contáctanos para recibir información sobre próximas convocatorias.',
+    hideCta: false,
+    button: { text: 'Contáctanos', link: '/contact' },
+};
+---
+
+<Layout title={seoTitle} description={seoDescription} footerCta={footerCta}>
+    <InnerHero content={innerHeroContent} />
+
+    <section class="bg-[var(--color-base-bg)] py-16 md:py-24">
+        <div class="site-container px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {courses.map((course, index) => (
+                    <div
+                        class="rounded-[var(--border-radius-base)] overflow-hidden border border-black"
+                        data-aos="fade-up"
+                        data-aos-delay={index * 50}
+                    >
+                        <div class="aspect-[4/3] overflow-hidden">
+                            <Image
+                                src={course.image}
+                                alt={course.title}
+                                width={600}
+                                height={450}
+                                class="w-full h-full object-cover"
+                                quality={80}
+                                format="webp"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-h5 mb-1">{course.title}</h3>
+                            <p class="text-sm opacity-70 mb-3">{course.location}</p>
+                            <p class="text-sm font-semibold">{course.participants} {course.unit}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <Stats content={impacto2025} background="dark" padding="base" />
+</Layout>

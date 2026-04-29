@@ -2,24 +2,22 @@ export const siteConfig = {
   companyName: 'Altasmiras',
   siteUrl: 'https://altasmiras.cl',
   Socials: {
-      xSocial: 'https://x.com/astrodotbuild',
-      Github: 'https://github.com/withastro',
-      Instagram: 'https://www.instagram.com/astrodotbuild',
-      LinkedIn: 'https://www.linkedin.com/company/astrodotbuild',
-      Email: 'support@titan-core.com',
-      Phone: '+123 456 7890',
-      Location: '123 Main St, Anytown, USA',
+      Instagram: 'https://www.instagram.com/altasmiras',
+      LinkedIn: 'https://www.linkedin.com/company/altasmiras',
+      Email: 'contacto@altasmiras.cl',
+      Phone: '',
+      Location: 'La Araucanía y Los Ríos, Chile',
   }
 };
 
 export const SEO = {
   Separator: '|',
   SiteName: 'Altasmiras Capacitación',
-  defaultDescription: 'Acerca de...',
+  defaultDescription: 'Fundación Altasmiras — Capacitación y desarrollo de personas en sectores rurales y vulnerables.',
 };
-  
+
 export const blogSetting = {
-  postsPerPage: 6   
+  postsPerPage: 6
 }
 
 export const themeSetting = {

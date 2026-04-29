@@ -24,46 +24,42 @@ export const statsLists: Record<string, StatsList> = {
         id: 'main',
         stats: [
             {
-                value: 10,
-                label: 'Theme Configurations',
+                value: 175,
+                label: 'Personas capacitadas',
+                prefix: '+',
             },
             {
-                value: 11,
-                label: 'Pre-Built Components',
+                value: 2,
+                label: 'Regiones',
             },
             {
-                value: 48,
-                label: 'Team Members',
+                value: 7,
+                label: 'Áreas de capacitación',
+                prefix: '+',
             },
             {
-                value: 500000,
-                label: 'Lines of Code',
-                prefix: '+'
-            }
-        ]
+                value: 2017,
+                label: 'Año de fundación',
+            },
+        ],
     },
-    withContent: {
-        id: 'withContent',
+    impacto2025: {
+        id: 'impacto2025',
         stats: [
             {
-                value: 10,
-                label: 'Color Schemes',
+                value: 7,
+                label: 'Cursos ejecutados',
+                prefix: '+',
             },
             {
-                value: 14.53,
-                label: 'Core Bundle Size',
-                suffix: 'KB'
+                value: 100,
+                label: 'Personas capacitadas',
+                prefix: '+',
             },
             {
-                value: 11,
-                label: 'Pre-Built Components',
+                value: 2,
+                label: 'Regiones',
             },
-            {
-                value: 10,
-                label: 'Build Time',
-                prefix: '<100',
-                suffix: 's'
-            }
-        ]
-    }
+        ],
+    },
 };
