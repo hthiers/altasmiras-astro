@@ -8,27 +8,31 @@ import orfebreria from '../../assets/images/courses/orfebreria.png';
 import arbitro from '../../assets/images/courses/arbitro.png';
 import cuidados from '../../assets/images/courses/cuidados.png';
 import redesSanitarias from '../../assets/images/courses/redes-sanitarias.png';
-import placeholder from '../../assets/images/home/default-hero.jpg';
+import prendasDeVestir from '../../assets/images/courses/prendas-de-vestir.png';
+import instalacionesElec from '../../assets/images/courses/instalaciones-elec.png';
+import cosmetologia from '../../assets/images/courses/cosmetologia.png';
 
-const seoTitle = 'Cursos 2025 | Fundación Altasmiras';
+const seoTitle = 'Cursos | Fundación Altasmiras';
 const seoDescription =
-    'Conoce los cursos de oficio ejecutados en 2025 en las regiones de Los Ríos y La Araucanía.';
+    'Conoce los cursos de oficio ejecutados en las regiones de Los Ríos y La Araucanía.';
 
 const innerHeroContent = {
-    title: 'Cursos Ejecutados 2025',
+    title: 'Cursos Ejecutados',
     description:
         'Durante 2025 ejecutamos diversos cursos de oficio en las regiones de Los Ríos y La Araucanía, fortaleciendo habilidades prácticas y promoviendo el desarrollo laboral y el emprendimiento.',
 };
 
-const courses = [
-    { title: 'Cosmetología básica', location: 'Villarrica', participants: 18, unit: 'alumnas', image: placeholder },
+const courses2025 = [
+    { title: 'Cosmetología básica', location: 'Villarrica', participants: 18, unit: 'alumnas', image: cosmetologia },
     { title: 'Orfebrería (cobre y plata)', location: 'Lanco', participants: 20, unit: 'participantes', image: orfebreria },
     { title: 'Árbitro de fútbol', location: 'Panguipulli', participants: 14, unit: 'participantes', image: arbitro },
     { title: 'Cuidados primarios de personas', location: 'Mariquina', participants: 18, unit: 'alumnas', image: cuidados },
-    { title: 'Diseño de prendas de vestir', location: 'Lanco', participants: 20, unit: 'alumnas', image: cuidados },
+    { title: 'Diseño de prendas de vestir', location: 'Lanco', participants: 20, unit: 'alumnas', image: prendasDeVestir },
     { title: 'Redes sanitarias y gas', location: 'Mariquina', participants: 18, unit: 'alumnos', image: redesSanitarias },
-    { title: 'Instalaciones eléctricas', location: 'Valdivia', participants: 17, unit: 'alumnas', image: placeholder },
+    { title: 'Instalaciones eléctricas', location: 'Valdivia', participants: 17, unit: 'alumnas', image: instalacionesElec },
 ];
+
+const courses2026: typeof courses2025 = [];
 
 const impacto2025 = {
     eyebrow: 'IMPACTO 2025',
@@ -51,8 +55,9 @@ const footerCta = {
 
     <section class="bg-[var(--color-base-bg)] py-16 md:py-24">
         <div class="site-container px-4">
+            <h2 class="text-h3 mb-8 font-bold">2025</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {courses.map((course, index) => (
+                {courses2025.map((course, index) => (
                     <div
                         class="rounded-[var(--border-radius-base)] overflow-hidden border border-black"
                         data-aos="fade-up"
@@ -77,6 +82,42 @@ const footerCta = {
                     </div>
                 ))}
             </div>
+        </div>
+    </section>
+
+    <section class="bg-[var(--color-base-bg)] py-8 pb-16 md:pb-24">
+        <div class="site-container px-4">
+            <h2 class="text-h3 mb-8 font-bold">2026</h2>
+            {courses2026.length > 0 ? (
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {courses2026.map((course, index) => (
+                        <div
+                            class="rounded-[var(--border-radius-base)] overflow-hidden border border-black"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 50}
+                        >
+                            <div class="aspect-[4/3] overflow-hidden">
+                                <Image
+                                    src={course.image}
+                                    alt={course.title}
+                                    width={600}
+                                    height={450}
+                                    class="w-full h-full object-cover"
+                                    quality={80}
+                                    format="webp"
+                                />
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-h5 mb-1">{course.title}</h3>
+                                <p class="text-sm opacity-70 mb-3">{course.location}</p>
+                                <p class="text-sm font-semibold">{course.participants} {course.unit}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <p class="opacity-60">Próximamente.</p>
+            )}
         </div>
     </section>
 

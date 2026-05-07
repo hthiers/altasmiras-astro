@@ -1,0 +1,50 @@
+---
+import Layout from '@layouts/Layout.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+import { Download } from 'lucide-astro';
+
+const seoTitle = 'Documentos Institucionales | Fundación Altasmiras';
+const seoDescription = 'Accede a los documentos institucionales de Fundación Altasmiras.';
+
+const innerHeroContent = {
+    title: 'Documentos Institucionales',
+    description: 'Documentos oficiales de la Fundación disponibles para su descarga.',
+};
+
+const documents = [
+    { name: 'Estatutos de la Fundación', file: '/docs/estatutos.pdf' },
+    { name: 'Reglamento Interno', file: '/docs/reglamento-interno.pdf' },
+    { name: 'Política de Transparencia', file: '/docs/politica-transparencia.pdf' },
+];
+
+const footerCta = {
+    eyebrow: 'CONTACTO',
+    title: '¿Necesitas más información?',
+    description: 'Contáctanos para cualquier consulta sobre nuestra documentación.',
+    hideCta: false,
+    button: { text: 'Contáctanos', link: '/contact' },
+};
+---
+
+<Layout title={seoTitle} description={seoDescription} footerCta={footerCta}>
+    <InnerHero content={innerHeroContent} />
+
+    <section class="bg-[var(--color-base-bg)] py-16 md:py-24">
+        <div class="site-container px-4">
+            <ul class="max-w-2xl mx-auto flex flex-col gap-4">
+                {documents.map((doc) => (
+                    <li>
+                        <a
+                            href={doc.file}
+                            download
+                            class="flex items-center gap-4 p-5 rounded-[var(--border-radius-base)] border border-black hover:bg-[var(--color-primary-light)] transition-colors group"
+                        >
+                            <Download class="w-5 h-5 shrink-0 opacity-60 group-hover:opacity-100" />
+                            <span class="text-base font-medium">{doc.name}</span>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+</Layout>

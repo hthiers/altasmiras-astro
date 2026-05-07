@@ -8,37 +8,37 @@ export const categories: Category[] = [
   {
     name: 'Tech',
     slug: 'tech',
-    description: 'Latest in technology and software development'
+    description: 'Lo último en tecnología y desarrollo de software'
   },
   {
     name: 'Web Development',
     slug: 'web-development',
-    description: 'Tips and insights for better web development'
+    description: 'Consejos e información sobre desarrollo web'
   },
   {
     name: 'Design',
     slug: 'design',
-    description: 'Exploring design and user experience'
+    description: 'Exploración del diseño y experiencia de usuario'
   },
   {
     name: 'Accessibility',
     slug: 'accessibility',
-    description: 'Exploring accessibility and user experience'
+    description: 'Accesibilidad y experiencia de usuario'
   },
   {
     name: 'Theme Usage',
     slug: 'theme-usage',
-    description: 'Learn how to use the theme'
+    description: 'Aprende a usar el tema'
   },
   {
     name: 'Astro JS',
     slug: 'astro-js',
-    description: 'Everything about Astro JS framework and development'
+    description: 'Todo sobre el framework Astro JS'
   },
   {
     name: 'SEO',
     slug: 'seo',
-    description: 'Search engine optimization strategies and best practices'
+    description: 'Estrategias y mejores prácticas de posicionamiento en buscadores'
   },
   
 ];

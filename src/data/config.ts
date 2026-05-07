@@ -4,9 +4,9 @@ export const siteConfig = {
   Socials: {
       Instagram: 'https://www.instagram.com/altasmiras',
       LinkedIn: 'https://www.linkedin.com/company/altasmiras',
-      Email: 'contacto@altasmiras.cl',
+      Email: 'Capacitacion@altasmiras.cl',
       Phone: '',
-      Location: 'La Araucanía y Los Ríos, Chile',
+      Location: 'Casa Matriz Gustavo Exss #1502 comuna Mariquina Cuidad San José',
   }
 };
 
