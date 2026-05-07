@@ -10,7 +10,6 @@ export interface MenuItem {
 export const headerMenu: MenuItem[] = [
     { name: 'Quiénes Somos', link: '/nosotros' },
     { name: 'Cursos', link: '/cursos' },
-    { name: 'Contacto', link: '/contact' },
     { name: 'Documentos', link: '/documentos' },
 ];
 
