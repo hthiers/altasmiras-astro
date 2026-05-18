@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import InnerHero from '@components/sections/InnerHero.astro';
 import SplitPanel from '@components/sections/SplitPanel.astro';
 import TeamGrid from '@components/sections/TeamGrid.astro';
-import aboutImage from '../../assets/images/home/about.jpg';
+import logoAltasmiras from '../../assets/images/logos/logo-altasmiras-comp.png';
 
 const seoTitle = 'Quiénes Somos | Fundación Altasmiras';
 const seoDescription =
@@ -20,7 +20,7 @@ const misionSection = {
     headline: 'Capacitación con enfoque humano',
     description:
         'Fundación Altasmiras es una institución sin fines de lucro que promueve la capacitación y el desarrollo de personas, especialmente en sectores rurales y vulnerables, con un enfoque técnico, social y humano, basado en valores de respeto, dignidad y compromiso con las personas.',
-    image: { src: aboutImage, alt: 'Fundación Altasmiras' },
+    image: { src: logoAltasmiras, alt: 'Logo Fundación Altasmiras', objectFit: 'contain' as const },
     buttons: [{ text: 'Ver Cursos 2025', link: '/cursos', variant: 'primary' as const }],
 };
 

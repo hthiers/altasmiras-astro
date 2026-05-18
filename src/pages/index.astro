@@ -9,7 +9,7 @@ import { statsLists } from '@data/stats';
 import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
 import heroImage from '../assets/images/home/hero-altasmiras.jpg';
-import aboutImage from '../assets/images/home/about.jpg';
+import aboutImage from '../assets/images/logos/logo-altasmiras-comp.png';
 
 const seoTitle = 'Fundación Altasmiras — Capacitación y Desarrollo';
 const seoDescription =
@@ -41,7 +41,7 @@ const quienesSomosSection = {
     headline: 'Una fundación comprometida con las personas',
     description:
         'Somos una institución sin fines de lucro creada en 2017 por la Diócesis de Villarrica. Promovemos la capacitación y el desarrollo de personas en sectores rurales y vulnerables, con un enfoque técnico, social y humano basado en valores de respeto, dignidad y compromiso.',
-    image: { src: aboutImage, alt: 'Fundación Altasmiras' },
+    image: { src: aboutImage, alt: 'Logo Fundación Altasmiras', objectFit: 'contain' },
     buttons: [{ text: 'Nuestra Historia', link: '/nosotros', variant: 'primary' as const }],
 };
 
