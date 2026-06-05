@@ -3,7 +3,6 @@ import Button from "@components/ui/Button.astro";
 import Input from "@components/ui/form/Input.astro";
 import Textarea from "@components/ui/form/Textarea.astro";
 import Radio from "@components/ui/form/Radio.astro";
-import Checkbox from "@components/ui/form/Checkbox.astro";
 
 const hearAboutOptions = [
     { label: "Motor de búsqueda", value: "search" },
@@ -61,14 +60,6 @@ const formBackground = 'light';
         label="Mensaje"
         id="message"
         name="message"
-        required
-        background={formBackground}
-    />
-
-    <Checkbox
-        label="Acepto los términos y condiciones"
-        id="terms"
-        name="terms"
         required
         background={formBackground}
     />

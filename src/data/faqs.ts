@@ -14,11 +14,11 @@ export const faqLists: Record<string, FaqList> = {
         faqs: [
             {
                 question: '¿Qué es Fundación Altasmiras?',
-                answer: 'Somos una institución sin fines de lucro creada en 2017 por la Diócesis de Villarrica, que promueve la capacitación y el desarrollo de personas en sectores rurales y vulnerables de La Araucanía y Los Ríos.',
+                answer: 'Somos una institución sin fines de lucro creada en 2017 por la Diócesis de Villarrica, que promueve la capacitación y el desarrollo de personas en sectores rurales y vulnerables de Los Ríos y La Araucanía.',
             },
             {
                 question: '¿Quiénes pueden participar en los cursos?',
-                answer: 'Los cursos están orientados a personas de sectores rurales y vulnerables de las regiones de La Araucanía y Los Ríos, con un enfoque en empleabilidad y emprendimiento.',
+                answer: 'Los cursos están orientados a personas de sectores rurales y vulnerables de las regiones de Los Ríos y La Araucanía, con un enfoque en empleabilidad y emprendimiento.',
             },
             {
                 question: '¿Cuáles son las áreas de capacitación?',
@@ -30,7 +30,7 @@ export const faqLists: Record<string, FaqList> = {
             },
             {
                 question: '¿Tienen presencia en más regiones?',
-                answer: 'Actualmente operamos en las regiones de La Araucanía y Los Ríos, con planes de expansión futura.',
+                answer: 'Actualmente operamos en las regiones de Los Ríos y La Araucanía, con planes de expansión futura.',
             },
         ],
     },
