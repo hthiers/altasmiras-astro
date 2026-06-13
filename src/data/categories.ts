@@ -40,7 +40,11 @@ export const categories: Category[] = [
     slug: 'seo',
     description: 'Estrategias y mejores prácticas de posicionamiento en buscadores'
   },
-  
+  {
+    name: 'Noticias',
+    slug: 'noticias',
+    description: 'Noticias y novedades de la Fundación Altasmiras'
+  },
 ];
 
 // Helper function to get category by slug

@@ -1,6 +1,5 @@
 ---
 name: "Óscar Gil Carter"
-headshot: "./images/placeholder.jpg"
 jobTitle: "Secretario del Directorio"
 publish: true
 order: 2

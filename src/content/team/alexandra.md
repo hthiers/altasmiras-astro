@@ -1,6 +1,5 @@
 ---
 name: "Alexandra Inostroza"
-headshot: "./images/placeholder.jpg"
 jobTitle: "Encargada de la Fundación"
 publish: true
 order: 3

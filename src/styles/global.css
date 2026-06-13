@@ -475,6 +475,44 @@
     article ul { font-size: var(--text-base); margin: 0 0 2rem; padding-left: 2rem; list-style-type: disc; }
     article ul ::marker { color: var(--color-primary); }
     article blockquote { font-size: var(--text-base); margin: 0 0 1.75rem; padding-left: 2rem; border-left: 4px solid var(--color-primary); }
+
+    article table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: var(--text-small);
+        margin: 0 0 2rem;
+    }
+    article table thead th {
+        background-color: var(--color-secondary);
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--color-secondary-light);
+    }
+    article table tbody tr:nth-child(odd) td { background-color: #ffffff; }
+    article table tbody tr:nth-child(even) td { background-color: #e8edf5; }
+    article table tbody td {
+        padding: 0.625rem 1rem;
+        border: 1px solid #d1d5db;
+        color: var(--color-headline);
+        vertical-align: middle;
+    }
+    article table tbody td:last-child { text-align: center; }
+
+    /* Total bar — bold paragraph immediately after a table */
+    article table + p {
+        background-color: var(--color-secondary);
+        color: #ffffff;
+        text-align: center;
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        margin-top: -2rem;
+        margin-bottom: 2rem;
+        border: 1px solid var(--color-secondary-light);
+        border-top: none;
+    }
+    article table + p strong { color: #ffffff; }
     
 }
 

@@ -1,6 +1,5 @@
 ---
 name: "Mons. Francisco Javier Stegmeier Schmidlin"
-headshot: "./images/placeholder.jpg"
 jobTitle: "Presidente del Directorio"
 publish: true
 order: 1

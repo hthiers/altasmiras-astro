@@ -8,8 +8,17 @@ import { featureLists } from '@data/features';
 import { statsLists } from '@data/stats';
 import Faqs from '@components/sections/Faqs.astro';
 import { faqLists } from '@data/faqs';
+import { getCollection } from 'astro:content';
 import heroImage from '../assets/images/home/hero-altasmiras.jpg';
 import aboutImage from '../assets/images/logos/logo-altasmiras-comp.png';
+
+const noticiasPosts = await getCollection('blog', ({ data }) => data.publish !== false && data.categories?.includes('Noticias'));
+noticiasPosts.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+const newsTicker = noticiasPosts.slice(0, 5).map((post) => ({
+    title: post.data.title,
+    slug: post.id,
+    excerpt: post.data.excerpt ?? '',
+}));
 
 const seoTitle = 'Fundación Altasmiras — Capacitación y Desarrollo';
 const seoDescription =
@@ -25,6 +34,7 @@ const heroContent = {
     ],
     backgroundImage: heroImage,
     overlayOpacity: 0.4,
+    newsTicker,
 };
 
 const featuresSection = {

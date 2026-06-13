@@ -1,6 +1,5 @@
 ---
 name: "Francisca Salgado"
-headshot: "./images/placeholder.jpg"
 jobTitle: "Asistente Coordinadora"
 publish: true
 order: 5

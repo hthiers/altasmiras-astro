@@ -5,14 +5,15 @@ import { Image } from 'astro:assets';
 interface HeroContent {
     title: string;
     description: string;
-        buttons?: {
+    buttons?: {
         text: string;
         link: string;
         variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
         target?: string;
     }[];
-    backgroundImage?: string | any; // Using any for now to handle both string paths and imported images
-    overlayOpacity?: number; // Value between 0 and 1
+    backgroundImage?: string | any;
+    overlayOpacity?: number;
+    newsTicker?: { title: string; slug: string; excerpt?: string }[];
 }
 
 interface Props {
@@ -61,4 +62,66 @@ const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
             </div>
         )}
     </div>
+
+    {content.newsTicker && content.newsTicker.length > 0 && (
+        <div
+            id="news-ticker"
+            class="absolute bottom-0 left-0 right-0 z-10 flex items-stretch overflow-hidden"
+            style="background: var(--color-secondary-dark);"
+            data-news-items={JSON.stringify(content.newsTicker)}
+        >
+            <span
+                class="hidden sm:flex items-center shrink-0 px-4 text-xs font-bold uppercase tracking-widest border-r border-white/20"
+                style="color: var(--color-primary); background: var(--color-secondary);"
+            >
+                Noticias
+            </span>
+            <a
+                id="ticker-link"
+                href={`/blog/${content.newsTicker[0].slug}`}
+                class="ticker-link flex items-center px-4 py-3 overflow-hidden flex-1 gap-4 group/ticker"
+            >
+                <div class="flex flex-col justify-center overflow-hidden flex-1">
+                    <span id="ticker-title" class="text-sm font-semibold text-white truncate group-hover/ticker:text-white/70 transition-colors duration-200">
+                        {content.newsTicker[0].title}
+                    </span>
+                    <span id="ticker-excerpt" class="text-xs text-white/70 truncate mt-0.5">
+                        {content.newsTicker[0].excerpt ?? ''}
+                    </span>
+                </div>
+                <span class="hidden sm:block text-white/40 shrink-0 group-hover/ticker:text-white/70 transition-colors duration-200" aria-hidden="true">→</span>
+            </a>
+        </div>
+    )}
 </section>
+
+<style>
+    .ticker-link {
+        transition: opacity 0.3s ease;
+    }
+</style>
+
+<script>
+    const ticker = document.getElementById('news-ticker');
+    if (ticker) {
+        const raw = ticker.dataset.newsItems;
+        const items: { title: string; slug: string; excerpt?: string }[] = raw ? JSON.parse(raw) : [];
+        const linkEl = document.getElementById('ticker-link') as HTMLAnchorElement | null;
+        const titleEl = document.getElementById('ticker-title');
+        const excerptEl = document.getElementById('ticker-excerpt');
+
+        if (linkEl && titleEl && items.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let current = 0;
+            setInterval(() => {
+                linkEl.style.opacity = '0';
+                setTimeout(() => {
+                    current = (current + 1) % items.length;
+                    titleEl.textContent = items[current].title;
+                    linkEl.href = `/blog/${items[current].slug}`;
+                    if (excerptEl) excerptEl.textContent = items[current].excerpt ?? '';
+                    linkEl.style.opacity = '1';
+                }, 300);
+            }, 4000);
+        }
+    }
+</script>

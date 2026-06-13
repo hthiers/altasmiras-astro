@@ -1,6 +1,5 @@
 ---
 name: "Jesica Antimilla"
-headshot: "./images/placeholder.jpg"
 jobTitle: "Recursos Humanos"
 publish: true
 order: 6

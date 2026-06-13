@@ -1,6 +1,5 @@
 ---
 name: "Jennifer Henríquez"
-headshot: "./images/placeholder.jpg"
 jobTitle: "Coordinadora"
 publish: true
 order: 4
